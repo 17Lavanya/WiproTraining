@@ -1,0 +1,4 @@
+This is the source file.
+It contains some sample text.
+We will copy these lines
+into destination.txt using Python.
