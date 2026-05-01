@@ -12,5 +12,4 @@ def copy_file(source, destination):
         print(f"The file '{source}' was not found.")
 
 
-
 copy_file("source.txt", "destination.txt")

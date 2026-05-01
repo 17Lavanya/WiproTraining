@@ -12,7 +12,4 @@ def count_file_contents(filename):
             print(f"Characters: {char_count}")
     except FileNotFoundError:
         print(f"The file '{filename}' was not found.")
-
-
-
 count_file_contents("sample.txt")
