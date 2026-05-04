@@ -1,0 +1,132 @@
+import time
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.relative_locator import locate_with
+from webdriver_manager.microsoft import EdgeChromiumDriverManager
+
+from Selenium_Basics.google_homepage_test import driver
+
+'''driver = webdriver.Edge(service=Service('../Resources/msedgedriver.exe'))
+driver.get("https://www.google.com")'''
+
+#ID
+'''search_input = driver.find_element(By.ID,"APjFqb")
+search_input.send_keys("selenium")
+time.sleep(3)
+search_input.clear()'''
+
+#Name
+'''search_input=driver.find_element(By.NAME,"q")
+search_input.send_keys("locators")
+time.sleep(3)'''
+
+#Name
+'''googlesearch_button = driver.find_element(By.NAME,"btnK")
+googlesearch_button.click()
+time.sleep(30)'''
+
+#Classname
+'''infl_button= driver.find_element(By.CLASS_NAME,"RNmpXc")
+infl_button.click()
+time.sleep(3)'''
+
+#TagName
+'''href_element = driver.find_elements(By.TAG_NAME,'a')
+for elmt in href_element:
+    print(f'{elmt.text} - {elmt.get_attribute('href')}')'''
+
+#LinkText
+'''images_link = driver.find_element(By.LINK_TEXT,"Images")
+images_link.click()
+time.sleep(10)'''
+
+#Partial LinkText
+'''images_link = driver.find_element(By.PARTIAL_LINK_TEXT,"ma")
+images_link.click()
+time.sleep(10)'''
+
+#CSS Selectors
+'''search_input = driver.find_element(By.CSS_SELECTOR,'div > textarea')
+search_input.send_keys('Selenium')
+time.sleep(5)'''
+
+#Xpath
+'''settings_text = driver.find_element(By.XPATH,'/html/body/div[2]/div[7]/div/div[2]/div[2]/span/span/g-popup/div[1]/div')
+print(settings_text.text)
+time.sleep(5)'''
+
+
+driver = webdriver.Edge(service=Service('../Resources/msedgedriver.exe'))
+'''driver.get('https://the-internet.herokuapp.com/tables')
+time.sleep(3)'''
+
+#AND & OR
+'''and_example = driver.find_element(By.XPATH,"//td[text()='Tim' and @class='first-name']")
+print(f'AND Example -> Found with both conditions:{and_example.text}')
+
+or_example = driver.find_element(By.XPATH,"//td[text()='Tim' or text() ='Frank']")
+print(f'OR Example -> Found with OR conditions:{or_example.text}')
+'''
+#child
+'''rows = driver.find_elements(By.XPATH,"//table[@id='table1']/tbody/tr/td")
+print(f'Child Example -> Found{len(rows)} columns in the first table.')'''
+
+#Parent
+'''email_cell = driver.find_element(By.XPATH,"//table[@id='table1']//td[text()='jdoe@hotmail.com']")
+parent_row = driver.find_element(By.XPATH,"//table[@id='table1']//td[text()='jdoe@hotmail.com']/parent::tr")
+print(f"Parent Example -> Email'{email_cell.text}' belongs to row with first name: "
+      f"{parent_row.find_element(By.XPATH,'./td[2]').text}")'''
+
+#Ancestor
+'''ancestor_table=driver.find_element(By.XPATH,"//td[text()='jsmith@gmail.com']/ancestor::table")
+print(f"Ancestor Example -> Table ID: {ancestor_table.get_attribute('id')}")'''
+
+#Descendant
+'''descendants = driver.find_elements(By.XPATH,"//table[@id='table1']/descendant::td")
+print(f"Descendant Example -> Found {len(descendants)} descendant cells.")'''
+
+#Relative Locators
+driver.get("https://www.saucedemo.com/")
+time.sleep(2)
+
+#Elements used for reference
+username_field = driver.find_element(By.ID,"user-name")
+password_field = driver.find_element(By.ID,"password")
+login_button = driver.find_element(By.ID,"login-button")
+
+#above -> element located above another
+elmt_above_password = driver.find_element(
+    locate_with(By.TAG_NAME,"input").above(password_field)
+)
+print(f"Above Example -> Text above password:{elmt_above_password.get_attribute('placeholder')}")
+elmt_above_password.send_keys('standard_user')
+time.sleep(5)
+
+#below -> element located below another
+field_below_username = driver.find_element(
+    locate_with(By.TAG_NAME,"input").below(username_field)
+)
+print(f"Below Example -> Placeholder below username: {field_below_username.get_attribute('placeholder')}")
+field_below_username.send_keys('secret_sauce')
+time.sleep(2)
+login_button.click()
+time.sleep(2)
+
+#toRightOf
+twiter_icon = driver.find_element(By.LINK_TEXT,"Twitter")
+facebook_icon = driver.find_element(locate_with(By.TAG_NAME,"a").to_right_of(twiter_icon))
+print(f"toRightOf Example -> Element to the right of Twitter icon has href: {facebook_icon.get_attribute('href')}")
+
+#toleftOf
+left_icon = driver.find_element(locate_with(By.TAG_NAME,'a').to_left_of(facebook_icon))
+print(f"toLeftOf Example -> Element to the left of Facebook icon has href: {left_icon.get_attribute('href')}")
+
+#near
+near_twitter = driver.find_elements(locate_with(By.TAG_NAME,"a").near(facebook_icon))
+for element in near_twitter:
+    print(f"Near Example -> Element near Facebook icon has href: {element.get_attribute('href')}")
+time.sleep(3)
+driver.quit()
+
+#
