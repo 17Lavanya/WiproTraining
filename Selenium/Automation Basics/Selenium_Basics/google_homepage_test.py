@@ -9,5 +9,4 @@ if pagetitle == 'Google':
     print("Google Homepage Loaded - Pass")
 else:
     print("Google Homepage NOT loaded - Fail")
-driver.quit()    
-
+driver.quit()
