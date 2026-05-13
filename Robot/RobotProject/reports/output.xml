@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.4 on win32)" generated="2026-05-11T15:51:41.884185" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="C:\Wipro Training\Robot\RobotProject\tests">
+<suite id="s1-s1" name="Login" source="C:\Wipro Training\Robot\RobotProject\tests\login.robot">
+<test id="s1-s1-t1" name="Verify User Can Login Successfully" line="5">
+<kw name="Open Demoblaze Application">
+<kw name="Fail" owner="BuiltIn">
+<msg time="2026-05-11T15:51:41.954004" level="FAIL">Not Implemented</msg>
+<arg>Not Implemented</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="FAIL" start="2026-05-11T15:51:41.953394" elapsed="0.019331">Not Implemented</status>
+</kw>
+<status status="FAIL" start="2026-05-11T15:51:41.950849" elapsed="0.022209">Not Implemented</status>
+</kw>
+<kw name="Click Login Menu">
+<status status="NOT RUN" start="2026-05-11T15:51:41.973623" elapsed="0.000047"/>
+</kw>
+<kw name="Enter Login Username">
+<status status="NOT RUN" start="2026-05-11T15:51:41.977260" elapsed="0.000036"/>
+</kw>
+<kw name="Enter Login Password">
+<status status="NOT RUN" start="2026-05-11T15:51:41.977668" elapsed="0.000029"/>
+</kw>
+<kw name="Click Login Button">
+<status status="NOT RUN" start="2026-05-11T15:51:41.982247" elapsed="0.000031"/>
+</kw>
+<kw name="Validate Successful Login">
+<status status="NOT RUN" start="2026-05-11T15:51:41.982665" elapsed="0.000030"/>
+</kw>
+<kw name="Close Application">
+<status status="NOT RUN" start="2026-05-11T15:51:41.990607" elapsed="0.000039"/>
+</kw>
+<status status="FAIL" start="2026-05-11T15:51:41.949671" elapsed="0.041488">Not Implemented</status>
+</test>
+<test id="s1-s1-t2" name="Verify Invalid User Login" line="14">
+<kw name="Open Demoblaze Application">
+<kw name="Fail" owner="BuiltIn">
+<msg time="2026-05-11T15:51:41.997137" level="FAIL">Not Implemented</msg>
+<arg>Not Implemented</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="FAIL" start="2026-05-11T15:51:41.996626" elapsed="0.000645">Not Implemented</status>
+</kw>
+<status status="FAIL" start="2026-05-11T15:51:41.996264" elapsed="0.001157">Not Implemented</status>
+</kw>
+<kw name="Click Login Menu">
+<status status="NOT RUN" start="2026-05-11T15:51:41.997848" elapsed="0.000034"/>
+</kw>
+<kw name="Enter Invalid Login Username">
+<status status="NOT RUN" start="2026-05-11T15:51:42.016474" elapsed="0.000075"/>
+</kw>
+<kw name="Enter Invalid Login Password">
+<status status="NOT RUN" start="2026-05-11T15:51:42.017049" elapsed="0.000033"/>
+</kw>
+<kw name="Click Login Button">
+<status status="NOT RUN" start="2026-05-11T15:51:42.017419" elapsed="0.000030"/>
+</kw>
+<kw name="Validate Invalid Login Alert">
+<status status="NOT RUN" start="2026-05-11T15:51:42.017796" elapsed="0.000026"/>
+</kw>
+<kw name="Close Application">
+<status status="NOT RUN" start="2026-05-11T15:51:42.018118" elapsed="0.000027"/>
+</kw>
+<status status="FAIL" start="2026-05-11T15:51:41.994244" elapsed="0.025203">Not Implemented</status>
+</test>
+<status status="FAIL" start="2026-05-11T15:51:41.945670" elapsed="0.076111"/>
+</suite>
+<suite id="s1-s2" name="Signup" source="C:\Wipro Training\Robot\RobotProject\tests\signup.robot">
+<test id="s1-s2-t1" name="Verify User Can Signup Successfully" line="5">
+<kw name="Open Demoblaze Application" owner="signup_keywords">
+<kw name="Launch Demoblaze Application">
+<msg time="2026-05-11T15:51:42.378707" level="FAIL">No keyword with name 'Launch Demoblaze Application' found.</msg>
+<status status="FAIL" start="2026-05-11T15:51:42.363906" elapsed="0.014915">No keyword with name 'Launch Demoblaze Application' found.</status>
+</kw>
+<status status="FAIL" start="2026-05-11T15:51:42.359607" elapsed="0.019456">No keyword with name 'Launch Demoblaze Application' found.</status>
+</kw>
+<kw name="Click Signup Menu" owner="signup_keywords">
+<status status="NOT RUN" start="2026-05-11T15:51:42.379676" elapsed="0.000060"/>
+</kw>
+<kw name="Enter Signup Username" owner="signup_keywords">
+<status status="NOT RUN" start="2026-05-11T15:51:42.380144" elapsed="0.000057"/>
+</kw>
+<kw name="Enter Signup Password" owner="signup_keywords">
+<status status="NOT RUN" start="2026-05-11T15:51:42.380577" elapsed="0.000045"/>
+</kw>
+<kw name="Click Signup Button" owner="signup_keywords">
+<status status="NOT RUN" start="2026-05-11T15:51:42.380871" elapsed="0.000043"/>
+</kw>
+<kw name="Validate Signup Success Message" owner="signup_keywords">
+<status status="NOT RUN" start="2026-05-11T15:51:42.381164" elapsed="0.000044"/>
+</kw>
+<kw name="Close Application" owner="signup_keywords">
+<status status="NOT RUN" start="2026-05-11T15:51:42.381474" elapsed="0.000073"/>
+</kw>
+<status status="FAIL" start="2026-05-11T15:51:42.358827" elapsed="0.022990">No keyword with name 'Launch Demoblaze Application' found.</status>
+</test>
+<status status="FAIL" start="2026-05-11T15:51:42.022996" elapsed="0.359566"/>
+</suite>
+<status status="FAIL" start="2026-05-11T15:51:41.886611" elapsed="0.496956"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="3" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Tests" id="s1" pass="0" fail="3" skip="0">Tests</stat>
+<stat name="Login" id="s1-s1" pass="0" fail="2" skip="0">Tests.Login</stat>
+<stat name="Signup" id="s1-s2" pass="0" fail="1" skip="0">Tests.Signup</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2026-05-11T15:51:41.948379" level="ERROR">Error in file 'C:\Wipro Training\Robot\RobotProject\tests\login.robot' on line 2: Resource file '..\resources\keywords\login_keywords.robot' does not exist.</msg>
+<msg time="2026-05-11T15:51:42.357910" level="ERROR">Error in file 'C:\Wipro Training\Robot\RobotProject\resources\keywords\signup_keywords.robot' on line 3: Importing library 'C:\Wipro Training\Robot\RobotProject\resources\pages\SignupPage.py' failed: ModuleNotFoundError: No module named 'libraries'
+Traceback (most recent call last):
+  File "C:\Wipro Training\Robot\RobotProject\resources\pages\SignupPage.py", line 5, in &lt;module&gt;
+    from libraries.logger import LogGen
+PYTHONPATH:
+  C:\Wipro Training\Robot\RobotProject\resources\pages
+  C:\Wipro Training\Robot\RobotProject\.venv\Scripts\robot.exe
+  C:\Wipro Training\Robot\RobotProject\.venv\Scripts\python314.zip
+  C:\Program Files\Python314\DLLs
+  C:\Program Files\Python314\Lib
+  C:\Program Files\Python314
+  C:\Wipro Training\Robot\RobotProject\.venv
+  C:\Wipro Training\Robot\RobotProject\.venv\Lib\site-packages</msg>
+</errors>
+</robot>
