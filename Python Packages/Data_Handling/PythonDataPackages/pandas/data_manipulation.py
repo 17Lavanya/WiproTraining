@@ -1,96 +1,52 @@
-'''#Reading Data from CSV, Excel, JSON, and SQL
+import matplotlib.pyplot as plt
+import numpy as np
 
-#import pandas as pd
+'''
+# Sample data
+x = np.linspace(0, 10, 100)
+y1 = np.sin(x)
+y2 = np.cos(x)
 
-# Creating a sample DataFrame
-#data = pd.DataFrame({
-    'A': [1, 2, 3, 4],
-    'B': [5, 6, 7, 8],
-    'C': [9, 10, 11, 12]
-})
+# Create a figure with two subplots
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 4))
 
-data.to_csv('sample_data.csv', index=False)
-data.to_excel('sample_data.xlsx', index=False)
-data.to_json('sample_data.json', orient='records')
+# First subplot
+ax1.plot(x, y1, color='blue', label='Sine')
+ax1.set_title('Sine Function')
+ax1.set_xlabel('X-axis')
+ax1.set_ylabel('Y-axis')
+ax1.legend()
 
+# Second subplot
+ax2.plot(x, y2, color='red', label='Cosine')
+ax2.set_title('Cosine Function')
+ax2.set_xlabel('X-axis')
+ax2.set_ylabel('Y-axis')
+ax2.legend()
+# Show the plots
+plt.tight_layout()
+plt.show()'''
 
-# Reading data
+# Sample data
+data = np.random.randn(100)
 
-csv_data = pd.read_csv('sample_data.csv')
-print("Data from CSV:\n", csv_data)
+# Create a figure with a histogram and a density plot
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))
 
-excel_data = pd.read_excel('sample_data.xlsx')
-print("Data from Excel:\n", excel_data)
+# Histogram
+ax1.hist(data, bins=10, color='skyblue', edgecolor='black')
+ax1.set_title('Histogram')
+ax1.set_xlabel('Value')
+ax1.set_ylabel('Frequency')
 
-json_data = pd.read_json('sample_data.json')
-print("Data from JSON:\n", json_data)'''
+# Density plot
+#ax2.hist(data, bins=10, density=True, color='skyblue', edgecolor='black', alpha=0.6)
+data_density = np.linspace(min(data), max(data), 100)
+ax2.plot(data_density, (1/(np.sqrt(2 * np.pi))) * np.exp(-0.5 * (data_density)**2), color='red')
+ax2.set_title('Density Plot')
+ax2.set_xlabel('Value')
+ax2.set_ylabel('Density')
 
-
-#import pandas as pd
-
-''' Sample DataFrame
-data = pd.DataFrame({
-    'A': [1, 2, 3, 4],
-    'B': [5, 6, 7, 8],
-    'C': [9, 10, 11, 12]
-}, index=['row1', 'row2', 'row3', 'row4'])
-print(data)
-# Selecting rows with label 'row2' and specific columns 'A' and 'C'
-selected_data = data.loc['row2', ['A', 'C']]
-print(selected_data)
-
-# Selecting the first 2 rows and first 2 columns
-selected_data = data.iloc[0:2, 0:2]
-print(selected_data)
-
-# Selecting rows where column 'A' is greater than 2
-filtered_data = data[data['A'] > 2]
-print(filtered_data)'''
-
-
-import pandas as pd
-
-# Sample DataFrame with missing values
-data = pd.DataFrame({
-    'A': [1, 2, None, 4],
-    'B': [None, 2, 3, 4],
-    'C': [1, 2, 3, None]
-})
-
-# Dropping rows with any missing values
-cleaned_data_drop = data.dropna()
-print('cleaned \n',cleaned_data_drop)
-
-# Filling missing values with 0
-cleaned_data_fill = data.fillna(0)
-print(cleaned_data_fill)
-
-# Sample DataFrame with duplicates
-data = pd.DataFrame({
-    'A': [1, 2, 2, 4],
-    'B': [5, 6, 6, 8]
-})
-
-# Removing duplicate rows
-cleaned_data = data.drop_duplicates()
-print(cleaned_data)
-
-# Sample DataFrame
-data = pd.DataFrame({
-    'A': ['1', '2', '3', '4']
-})
-print('before \n',data)
-print(data.dtypes)
-# Converting data type of column 'A' to integer
-data['A'] = data['A'].astype(int)
-print('after \n',data)
-print(data.dtypes)
-
-# Sample DataFrame
-data = pd.DataFrame({
-    'A': ['Hello', 'World', 'Pandas', 'Python']
-})
-
-# Converting column 'A' to lowercase
-data['A'] = data['A'].str.lower()
-print(data)
+# Show the plots
+plt.tight_layout()
+plt.show()

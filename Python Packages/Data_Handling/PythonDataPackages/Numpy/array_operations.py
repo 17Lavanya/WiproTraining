@@ -1,64 +1,52 @@
-'''
-Array Operations
-Element-wise Operations :  NumPy supports element-wise operations,
-which apply operations to each element in the array individually.
-
-'''
-
+import matplotlib.pyplot as plt
 import numpy as np
 
-array1 = np.array([1, 2, 3])
-array2 = np.array([4, 5, 6])
-
-# Element-wise addition
-print("Element-wise addition:", array1 + array2)
-
-# Element-wise subtraction
-print("Element-wise subtraction:", array1 - array2)
-
-# Element-wise multiplication
-print("Element-wise multiplication:", array1 * array2)
-
-# Element-wise division
-print("Element-wise division:", array1 / array2)
-
 '''
-Basic Arithmetic Operations
-NumPy provides functions for basic arithmetic operations which also operate element-wise.
+# Sample data
+x = np.linspace(0, 10, 100)
+y1 = np.sin(x)
+y2 = np.cos(x)
 
-Aggregate Functions
-NumPy provides aggregate functions that operate over the entire array 
-or along a specific axis.
+# Create a figure with two subplots
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 4))
 
-'''
+# First subplot
+ax1.plot(x, y1, color='blue', label='Sine')
+ax1.set_title('Sine Function')
+ax1.set_xlabel('X-axis')
+ax1.set_ylabel('Y-axis')
+ax1.legend()
 
-# Adding a scalar to an array
-print("Adding 10 to each element:", array1 + 10)
+# Second subplot
+ax2.plot(x, y2, color='red', label='Cosine')
+ax2.set_title('Cosine Function')
+ax2.set_xlabel('X-axis')
+ax2.set_ylabel('Y-axis')
+ax2.legend()
+# Show the plots
+plt.tight_layout()
+plt.show()'''
 
-# Multiplying each element by a scalar
-print("Multiplying each element by 2:", array1 * 2)
+# Sample data
+data = np.random.randn(100)
 
-# Using numpy functions
-print("Square of each element:", np.square(array1))
-print("Square root of each element:", np.sqrt(array1))
+# Create a figure with a histogram and a density plot
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))
 
+# Histogram
+ax1.hist(data, bins=10, color='skyblue', edgecolor='black')
+ax1.set_title('Histogram')
+ax1.set_xlabel('Value')
+ax1.set_ylabel('Frequency')
 
-array = np.array([[1, 2, 3], [4, 5, 6]])
+# Density plot
+#ax2.hist(data, bins=10, density=True, color='skyblue', edgecolor='black', alpha=0.6)
+data_density = np.linspace(min(data), max(data), 100)
+ax2.plot(data_density, (1/(np.sqrt(2 * np.pi))) * np.exp(-0.5 * (data_density)**2), color='red')
+ax2.set_title('Density Plot')
+ax2.set_xlabel('Value')
+ax2.set_ylabel('Density')
 
-# Sum of all elements
-print("Sum of all elements:", np.sum(array))
-
-# Mean of all elements
-print("Mean of all elements:", np.mean(array))
-
-# Minimum element
-print("Minimum element:", np.min(array))
-
-# Maximum element
-print("Maximum element:", np.max(array))
-
-# Sum along each column
-print("Sum along each column:", np.sum(array, axis=0))
-
-# Sum along each row
-print("Sum along each row:", np.sum(array, axis=1))
+# Show the plots
+plt.tight_layout()
+plt.show()
