@@ -1,67 +1,74 @@
 import seaborn as sns
 import matplotlib.pyplot as plt
-import pandas as pd
-import numpy as np
 
-# Create a sample DataFrame
-data = pd.DataFrame({
-    'x': np.random.rand(100),
-    'y': np.random.rand(100)
-})
+# Load the iris dataset
+iris = sns.load_dataset('iris')
+'''
+# Create a pair plot
+sns.pairplot(iris, hue='species')
+plt.title('Pair Plot of Iris Dataset')
+plt.show()
 
-# Create a scatterplot
-sns.scatterplot(x='x', y='y', data=data)
-plt.title('Scatterplot of x vs y')
+# Create a joint plot
+sns.jointplot(x='sepal_length', y='sepal_width', data=iris, kind='scatter', hue='species')
+plt.suptitle('Joint Plot of Sepal Length vs Sepal Width')
+plt.show()
+
+# Exclude non-numeric columns
+numeric_iris = iris.drop(columns=['species'])
+
+# Create a sample correlation matrix
+data = numeric_iris.corr()
+
+# Create a heatmap
+sns.heatmap(data, annot=True, cmap='coolwarm')
+plt.title('Heatmap of Iris Correlation Matrix')
+plt.show()
+
+# Create a facet grid
+g = sns.FacetGrid(iris, col='species')
+g.map(sns.histplot, 'sepal_length')
+plt.suptitle('Facet Grid of Sepal Length by Species')
+plt.show()
+'''
+#Customising Plots
+
+# Set a theme
+sns.set_theme(style='whitegrid')
+
+# Create a scatter plot with the theme
+sns.scatterplot(x='sepal_length', y='sepal_width', data=iris, hue='species')
+plt.title('Scatter Plot with Whitegrid Theme')
+plt.show()
+
+# Set a color palette
+sns.set_palette('pastel')
+
+# Create a bar plot with the color palette
+sns.barplot(x='species', y='sepal_length', data=iris)
+plt.title('Bar Plot with Pastel Color Palette')
 plt.show()
 
 
-# Create a sample DataFrame with a time series
-data = pd.DataFrame({
-     'time': pd.date_range(start='1/1/2020', periods=10),
-     'value': np.random.rand(10) #.cumsum()
-})
+# Create a bar plot with annotations
+sns.barplot(x='species', y='sepal_length', data=iris, errorbar='sd')
 
- # Create a lineplot
-sns.lineplot(x='time', y='value', data=data)
-plt.title('Lineplot of Value over Time')
+# Add annotations
+for p in plt.gca().patches:
+    plt.gca().annotate(f'{p.get_height():.2f}', (p.get_x() + p.get_width() / 2., p.get_height()),
+                       ha='center', va='center', xytext=(0, 10), textcoords='offset points')
+
+plt.title('Bar Plot with Statistical Annotations')
 plt.show()
 
 
-# Create a sample DataFrame
-data = pd.DataFrame({
-    'category': ['A', 'B', 'C', 'D'],
-     'value': [10, 20, 15, 25]
-})
-#
-# Create a barplot
-sns.barplot(x='category', y='value', data=data)
-plt.title('Barplot of Categories')
+# Create a scatter plot with Seaborn
+sns.scatterplot(x='sepal_length', y='sepal_width', data=iris, hue='species')
+
+# Customize with Matplotlib
+plt.title('Scatter Plot with Matplotlib Customization')
+plt.xlabel('Sepal Length')
+plt.ylabel('Sepal Width')
+plt.legend(title='Species')
+plt.grid(True)
 plt.show()
-
-
-# Create a sample DataFrame
-data = pd.DataFrame({
-    'category': ['A', 'B', 'A', 'C', 'B', 'A', 'D', 'C', 'C','A', 'D',
-                 'C', 'C','A', 'D', 'C', 'C']
-})
-#
-# # Create a countplot
-# sns.countplot(x='category', data=data, legend='auto',color='red')
-# plt.title('Countplot of Categories')
-# plt.show()
-#
-# # Create a sample DataFrame
-# data = pd.DataFrame({
-#     'value': np.random.randn(100)
-# })
-#
-# # Create a histogram
-# sns.histplot(data['value'], bins=10)
-# plt.title('Histogram of Values')
-# plt.show()
-#
-# # Create a KDE plot
-# sns.kdeplot(data['value'])
-# plt.title('KDE Plot of Values')
-# plt.show()
-#

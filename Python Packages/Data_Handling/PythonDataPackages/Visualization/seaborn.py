@@ -9,22 +9,22 @@ data = pd.DataFrame({
     'y': np.random.rand(100)
 })
 
-'''# Create a scatterplot
+# Create a scatterplot
 sns.scatterplot(x='x', y='y', data=data)
 plt.title('Scatterplot of x vs y')
-plt.show()'''
+plt.show()
 
 
 # # Create a sample DataFrame with a time series
- data = pd.DataFrame({
-    'time': pd.date_range(start='1/1/2020', periods=10),
-     'value': np.random.rand(10) #.cumsum()
- })
-
+# data = pd.DataFrame({
+#     'time': pd.date_range(start='1/1/2020', periods=10),
+#     'value': np.random.rand(10) #.cumsum()
+# })
+#
 # # Create a lineplot
- sns.lineplot(x='time', y='value', data=data)
- plt.title('Lineplot of Value over Time')
- plt.show()
+# sns.lineplot(x='time', y='value', data=data)
+# plt.title('Lineplot of Value over Time')
+# plt.show()
 #
 #
 # # Create a sample DataFrame
